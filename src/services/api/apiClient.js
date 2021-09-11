@@ -2,7 +2,7 @@ import axios from "axios"
 import store from "@/store" //NECESSÁRIO PARA CAPTURAR O TOKEN DE AUTENTICAÇÃO
 
 const api = axios.create({
-  baseURL: "http://10.103.208.3/api/",
+  baseURL: "http://localhost/api/",
 })
 
 /**
