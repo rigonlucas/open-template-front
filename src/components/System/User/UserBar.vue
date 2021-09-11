@@ -81,7 +81,6 @@ export default {
     ...mapActions({
         dispatchLogout: "Auth/logout",
         dispatchForceLogout: "Auth/forceLogout",
-        dispatchSaveRedacao: "Redacao/saveRedacao",
     }),
     async logout() {
       try {
@@ -89,7 +88,6 @@ export default {
       } catch (error) {
         this.dispatchForceLogout()
       } finally {
-        this.dispatchSaveRedacao("")
         this.$router.push({ name: "login", query: { param: "teste", teste: "teste" } })
       }
     },

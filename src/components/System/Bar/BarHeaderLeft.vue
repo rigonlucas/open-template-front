@@ -3,8 +3,8 @@
         <v-toolbar-title>
             <router-link
                 class="white--text text-decoration-none"
-                :to="{ name: 'candidato.minhas.redacao' }">
-                REDAÇÃO ONLINE
+                :to="{ name: 'home' }">
+                TEXTO
             </router-link>
         </v-toolbar-title>
     </div>

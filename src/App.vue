@@ -2,7 +2,7 @@
     <div id="app">
         <v-app id="inspire">
             <div v-if="isAuthenticated">
-                <template v-if="access.permissionTI">
+                <template v-if="access.admin">
                     <v-navigation-drawer
                         id="left"
                         v-model="showLeftMenu"
@@ -29,7 +29,7 @@
                     color="#003E7D"
                     class="white--text"
                 >
-                    <template v-if="access.permissionTI">
+                    <template v-if="access.admin">
                         <v-app-bar-nav-icon
                             class="white--text"
                             @click.stop="toggleLeftMenu"></v-app-bar-nav-icon>
@@ -41,7 +41,7 @@
 
                     <bar-header-right/>
 
-                    <template v-if="access.permissionTI">
+                    <template v-if="access.admin">
                         <v-app-bar-nav-icon
                             class="white--text"
                             @click.stop="toggleRightMenu">
@@ -87,8 +87,7 @@
     },
     data: () => ({
       access: {
-        permissionTI: false,
-        redacao: false,
+        admin: false,
       },
       showLeftMenu: false,
       showRightMenu: false,
@@ -116,8 +115,8 @@
         this.showRightMenu = !this.showRightMenu
       },
       updateMenus(){
-        this.access.permissionTI = !!matchUserPermissions(["redacao_admin"], this.getPermissions)
-        this.access.redacao = !!matchUserPermissions(["redacao"], this.getPermissions)
+        this.access.admin = !!matchUserPermissions(["admin"], this.getPermissions)
+        this.access.superadmin = !!matchUserPermissions(["super_admin"], this.getPermissions)
       },
     },
   }

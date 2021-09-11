@@ -105,7 +105,7 @@ export default {
       try {
         await this.dispatchLogin(this.form)
         this.$emit("logged")
-        this.$router.push({ name: "candidato.minhas.redacao" })
+        this.$router.push({ name: "candidato" })
       } catch ({ response }) {
         if (response.data.errors) {
           this.errors = response.data.errors
